@@ -1407,6 +1407,20 @@ tr:last-child td {
   text-align: center;
 }
 
+.loading-state {
+  display: grid;
+  min-height: 320px;
+  place-content: center;
+  gap: 7px;
+  color: var(--ink);
+  text-align: center;
+}
+
+.loading-state span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
 .empty-state svg {
   width: 24px;
   height: 24px;

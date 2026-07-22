@@ -1,12 +1,11 @@
-const CACHE_NAME = "greenfield-erp-v2";
+const CACHE_NAME = "greenfield-erp-v3";
 const APP_ASSETS = [
   "./",
   "./index.html",
-  "./styles.css",
-  "./script.js",
+  "./styles.css?v=3",
+  "./script.js?v=3",
   "./manifest.json",
   "./assets/app-icon.svg",
-  "./assets/lucide.min.js",
   "./assets/school-campus.webp"
 ];
 

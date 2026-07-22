@@ -8,9 +8,9 @@
     <title>Greenfield School ERP</title>
     <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
     <link rel="manifest" href="manifest.json">
-    <link rel="stylesheet" href="styles.css">
-    <script src="assets/lucide.min.js" defer></script>
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css?v=3">
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+    <script src="script.js?v=3" defer></script>
   </head>
   <body>
     <div class="app-shell" id="appShell">
@@ -87,7 +87,12 @@
           </div>
         </header>
 
-        <section id="viewRoot" class="view-root" aria-live="polite"></section>
+        <section id="viewRoot" class="view-root" aria-live="polite">
+          <div class="loading-state" id="loadingState">
+            <strong>Loading school records...</strong>
+            <span>If this remains visible, refresh the page once to update the portal.</span>
+          </div>
+        </section>
       </main>
     </div>
 

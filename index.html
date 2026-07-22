@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173f35">
+    <meta name="description" content="Greenfield Public School ERP for administration, teachers, students, and parents.">
+    <title>Greenfield School ERP</title>
+    <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <script src="assets/lucide.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell" id="appShell">
+      <aside class="sidebar" id="sidebar" aria-label="Main navigation">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">G</div>
+          <div class="brand-copy">
+            <strong>Greenfield</strong>
+            <span>School ERP</span>
+          </div>
+          <button class="icon-button sidebar-close" id="sidebarClose" type="button" aria-label="Close menu">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <div class="portal-picker">
+          <label for="portalSwitcher">Viewing portal</label>
+          <div class="select-wrap">
+            <i data-lucide="panels-top-left"></i>
+            <select id="portalSwitcher">
+              <option value="admin">School administration</option>
+              <option value="teacher">Teacher workspace</option>
+              <option value="student">Student and parent</option>
+              <option value="website">Public website</option>
+            </select>
+          </div>
+        </div>
+
+        <nav class="side-nav" id="sideNav"></nav>
+
+        <div class="sidebar-footer">
+          <div class="session-block">
+            <span>Academic session</span>
+            <strong>2026-27</strong>
+          </div>
+          <button class="user-block" id="resetDemo" type="button" title="Reset the sample data">
+            <span class="user-avatar">AM</span>
+            <span>
+              <strong>Anita Mehra</strong>
+              <small>School administrator</small>
+            </span>
+            <i data-lucide="rotate-ccw"></i>
+          </button>
+        </div>
+      </aside>
+
+      <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+      <main class="workspace" id="workspace">
+        <header class="topbar" id="topbar">
+          <div class="topbar-left">
+            <button class="icon-button menu-button" id="menuButton" type="button" aria-label="Open menu">
+              <i data-lucide="menu"></i>
+            </button>
+            <div>
+              <p class="eyebrow" id="viewEyebrow">School operations</p>
+              <h1 id="viewTitle">Good morning, Anita</h1>
+            </div>
+          </div>
+          <div class="topbar-actions">
+            <label class="global-search" for="globalSearch">
+              <i data-lucide="search"></i>
+              <input id="globalSearch" type="search" placeholder="Search students, staff, homework" autocomplete="off">
+              <span class="search-results" id="searchResults"></span>
+            </label>
+            <button class="icon-button notification-button" id="notificationButton" type="button" aria-label="Notifications">
+              <i data-lucide="bell"></i>
+              <span class="notification-dot"></span>
+            </button>
+            <button class="primary-button" id="quickAction" type="button">
+              <i data-lucide="plus"></i>
+              <span>Add student</span>
+            </button>
+          </div>
+        </header>
+
+        <section id="viewRoot" class="view-root" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Portal switcher">
+      <button class="mobile-nav-item is-active" data-view="admin" type="button"><i data-lucide="layout-dashboard"></i><span>Admin</span></button>
+      <button class="mobile-nav-item" data-view="teacher" type="button"><i data-lucide="presentation"></i><span>Teacher</span></button>
+      <button class="mobile-nav-item" data-view="student" type="button"><i data-lucide="graduation-cap"></i><span>Family</span></button>
+      <button class="mobile-nav-item" data-view="website" type="button"><i data-lucide="school"></i><span>Website</span></button>
+    </nav>
+
+    <dialog class="app-dialog" id="appDialog">
+      <div class="dialog-shell">
+        <header class="dialog-header">
+          <div>
+            <p class="eyebrow" id="dialogEyebrow">School record</p>
+            <h2 id="dialogTitle">Update record</h2>
+          </div>
+          <button class="icon-button" id="dialogClose" type="button" aria-label="Close dialog"><i data-lucide="x"></i></button>
+        </header>
+        <div id="dialogBody"></div>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
